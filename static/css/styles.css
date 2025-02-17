@@ -1,0 +1,416 @@
+/* Spotify Clone Styles */
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    min-width: 200px;
+    width: 15%;
+    max-width: 250px;
+    height: 100vh;
+    background-color: #000;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease-in-out;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar ul li a:hover {
+    color: #1DB954;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 15%;
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.nav-button:hover {
+    transform: scale(1.1);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Section Titles */
+.section-title {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Playlist Grid */
+.playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.playlist {
+    background-color: #181818;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.playlist:hover {
+    transform: scale(1.05);
+}
+
+.playlist img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Music Player */
+.music-player {
+    position: fixed;
+    bottom: 0;
+    left: 15%;
+    width: calc(100% - 15%);
+    background-color: #181818;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: left 0.3s ease-in-out;
+}
+
+.song-info {
+    display: flex;
+    align-items: center;
+}
+
+.song-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.song-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.artist {
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+/* Player Controls */
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.player-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.player-controls button:hover {
+    transform: scale(1.1);
+}
+
+.play-btn {
+    font-size: 22px;
+}
+
+/* Progress Bar */
+.progress-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.progress-bar input {
+    width: 200px;
+    cursor: pointer;
+}
+
+/* Volume Control */
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.volume-control input {
+    width: 100px;
+    cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+        padding: 10px;
+    }
+
+    .sidebar ul li a {
+        font-size: 14px;
+    }
+
+    .sidebar ul li a i {
+        margin-right: 5px;
+    }
+
+    .main-content {
+        margin-left: 60px;
+    }
+
+    .music-player {
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+}
+
+/* ======================== */
+/* Login & Register Styling */
+/* ======================== */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw; 
+    background: linear-gradient(135deg, #1DB954, #121212);
+    padding: 20px;
+}
+
+.auth-box {
+    background: #282828;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    max-width: 100%;
+    min-width: 320px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+    .auth-box {
+        width: 450px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Input Fields */
+.auth-box input {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background: #3e3e3e;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.auth-box input:focus {
+    background: #525252;
+    border-left: 3px solid #1DB954;
+    box-shadow: 0px 0px 8px rgba(29, 185, 84, 0.8);
+}
+
+/* Login/Register Button */
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #1DB954;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.auth-btn:hover {
+    background-color: #1ed760;
+    box-shadow: 0px 4px 10px rgba(29, 185, 84, 0.3);
+}
+
+/* Social Media Buttons */
+.social-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.google-btn {
+    background-color: #ffffff;
+    color: black;
+}
+
+.facebook-btn {
+    background-color: #1877F2;
+    color: white;
+}
+
+.apple-btn {
+    background-color: black;
+    color: white;
+}
+
+.social-btn i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.social-btn:hover {
+    transform: scale(1.03);
+}
+
+/* Remember Me Checkbox */
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.remember-me input {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    cursor: pointer;
+    accent-color: #1DB954;
+}
+
+.remember-me label {
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.remember-me label:hover {
+    color: #1ed760;
+}
+
+.flash-messages {
+    position: fixed;
+    top: 10px;
+    right: -30px;
+    width: auto;
+    z-index: 1000;
+}
+
+.alert {
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.alert-success {
+    background-color: #1DB954; /* Spotify Green */
+    color: white;
+}
+
+.alert-danger {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.alert-info {
+    background-color: #17a2b8;
+    color: white;
+}

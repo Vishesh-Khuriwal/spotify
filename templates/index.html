@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <h1 id="greeting"></h1>
+</header>
+<section class="featured">
+    <h2>Made For You</h2>
+    <div class="playlist-container" id="playlist-container">
+        <!-- Playlists will be added dynamically -->
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("/playlists")
+        .then(response => response.json())
+        .then(playlists => {
+            const container = document.getElementById("playlist-container");
+            container.innerHTML = ""; // Clear existing content
+            playlists.forEach(playlist => {
+                const item = document.createElement("div");
+                item.classList.add("playlist-item");
+                item.innerHTML = `
+                    <img src="${playlist.image}" alt="${playlist.name}">
+                    <p>${playlist.name}</p>
+                `;
+                container.appendChild(item);
+            });
+        })
+        .catch(error => console.error("Error fetching playlists:", error));
+});
+</script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Spotify Clone{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h2>Welcome, {{ username }}!</h2>
+    <p>Explore your favorite music and playlists.</p>
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+</div>
+{% endblock %}

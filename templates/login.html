@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-box">
+        <h1>Log in to Spotify</h1>
+
+        <button class="social-btn google-btn">
+            <i class="fab fa-google"></i> Continue with Google
+        </button>
+        <button class="social-btn facebook-btn">
+            <i class="fab fa-facebook"></i> Continue with Facebook
+        </button>
+        <button class="social-btn apple-btn">
+            <i class="fab fa-apple"></i> Continue with Apple
+        </button>
+
+        <div class="divider">OR</div>
+
+        <form method="POST" action="{{ url_for('login') }}">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email address" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+
+            <button type="submit" class="auth-btn">Log In</button>
+        </form>
+
+        <div class="extra-links">
+            <a href="#">Forgot password?</a>
+            <p>Don't have an account? <a href="{{ url_for('register') }}">Sign up for free</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
